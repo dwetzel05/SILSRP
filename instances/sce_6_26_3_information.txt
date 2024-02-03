@@ -1,0 +1,21 @@
+Instance information
+Planning horizon;26
+Additional horizon at the end (for feasibility);9
+Number of services;6
+Number of vessels;17
+Number of nodes;795
+Number of sailing arcs;7266
+Number of transhipment arcs;1252
+Number of demands;4142
+Number of empty supply nodes;379
+Number of empty demand nodes;376
+
+Parameters used in the creation
+Seed;2205
+Vessel utilization;0.75
+Bunker price;600
+Alpha for demand amount;0.25
+Penalty/Reward factor demand;[2.083, 0.208]
+Maximum waiting time (hours) before port entry;14
+Maximum transshipment time (hours);168
+Allowed delay for demands;0.5 * transit time, but at least one week and at most 3 weeks
