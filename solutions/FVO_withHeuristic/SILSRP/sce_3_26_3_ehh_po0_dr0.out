@@ -1,0 +1,144 @@
+cpu-bind=MASK - n2lcn0125, task  0  0 [3858144]: mask |--------|--------||--------|--------||--------|--------||--------|--------||||--------|--------||--------|----BBBB||--------|--------||--------|--------|  set
+started at Thu Mar 16 15:00:18 CET 2023
+Timecheck 9936774.718402132
+Set parameter TokenServer to value "license3.uni-paderborn.de"
+Warning: Gurobi version mismatch between Python 10.0.1 and C library 10.0.0
+Timecheck 9936774.72255982
+Timecheck 9936774.722781142
+Timecheck 9936774.722812902
+Timecheck 9936774.722833993
+
+
+####################################################################################################
+Solve scenario sce_3_26_3 with free vessel operation using the expanding horizon heuristic
+Vessels cannot omit ports, Demands cannot be rejected
+####################################################################################################
+Data preprocessing, load /upb/departments/pc2/groups/hpc-prf-winf4/dwetzel/SILSRP/inst_final/sce_3_26_3
+and create additional sets and parameters
+	|- Read vessel information, number of vessels:	10
+	|- Read node information, number of nodes:		373
+	|- Read arc information
+		|- Number of sailing arcs:			1531
+		|- Number of transshipment arcs:	724
+	|- Read container information
+		|- Number of demands:		740
+		|- Number of empties (+/-):	159/156
+	|- Create additional sets and parameters
+
+Data preprocessing took 	00:00:00.239
+####################################################################################################
+Use a heuristic start to improve solution quality and runtime
+
+Extend the horizon of the problem step by step and fix a part of the solution to obtain a heuristic start
+Consider up to the following weeks:	  4,  6,  8, 10, 12, 14, 16, 18, 20, 22, 24, 26
+Fix previous solution up to week:	  0,  2,  4,  6,  8, 10, 12, 14, 16, 18, 20, 22
+----------------------------------------------------------------------------------------------------
+Consider up to week  4 and fix previous solution up to week  0
+	|- Prepare subdata, took	00:00:00.001
+	|- Create variables, took	00:00:00.010
+	|- Create objective, took	00:00:00.011
+	|- Create constraints, took	00:00:00.060
+	|- Optimizing, took			00:00:00.066
+----------------------------------------------------------------------------------------------------
+Consider up to week  6 and fix previous solution up to week  2
+	|- Prepare subdata, took	00:00:00.001
+	|- Create variables, took	00:00:00.037
+	|- Create objective, took	00:00:00.037
+	|- Create constraints, took	00:00:00.175
+	|- Optimizing, took			00:00:02.199
+----------------------------------------------------------------------------------------------------
+Consider up to week  8 and fix previous solution up to week  4
+	|- Prepare subdata, took	00:00:00.001
+	|- Create variables, took	00:00:00.065
+	|- Create objective, took	00:00:00.079
+	|- Create constraints, took	00:00:00.298
+	|- Optimizing, took			00:00:02.623
+----------------------------------------------------------------------------------------------------
+Consider up to week 10 and fix previous solution up to week  6
+	|- Prepare subdata, took	00:00:00.002
+	|- Create variables, took	00:00:00.099
+	|- Create objective, took	00:00:00.080
+	|- Create constraints, took	00:00:00.392
+	|- Optimizing, took			00:00:05.921
+----------------------------------------------------------------------------------------------------
+Consider up to week 12 and fix previous solution up to week  8
+	|- Prepare subdata, took	00:00:00.002
+	|- Create variables, took	00:00:00.118
+	|- Create objective, took	00:00:00.116
+	|- Create constraints, took	00:00:00.462
+	|- Optimizing, took			00:00:06.602
+----------------------------------------------------------------------------------------------------
+Consider up to week 14 and fix previous solution up to week 10
+	|- Prepare subdata, took	00:00:00.002
+	|- Create variables, took	00:00:00.147
+	|- Create objective, took	00:00:00.118
+	|- Create constraints, took	00:00:00.587
+	|- Optimizing, took			00:00:02.062
+----------------------------------------------------------------------------------------------------
+Consider up to week 16 and fix previous solution up to week 12
+	|- Prepare subdata, took	00:00:00.002
+	|- Create variables, took	00:00:00.168
+	|- Create objective, took	00:00:00.139
+	|- Create constraints, took	00:00:00.638
+	|- Optimizing, took			00:00:09.376
+----------------------------------------------------------------------------------------------------
+Consider up to week 18 and fix previous solution up to week 14
+	|- Prepare subdata, took	00:00:00.003
+	|- Create variables, took	00:00:00.211
+	|- Create objective, took	00:00:00.197
+	|- Create constraints, took	00:00:00.751
+	|- Optimizing, took			00:00:03.608
+----------------------------------------------------------------------------------------------------
+Consider up to week 20 and fix previous solution up to week 16
+	|- Prepare subdata, took	00:00:00.003
+	|- Create variables, took	00:00:00.223
+	|- Create objective, took	00:00:00.225
+	|- Create constraints, took	00:00:00.844
+	|- Optimizing, took			00:00:03.118
+----------------------------------------------------------------------------------------------------
+Consider up to week 22 and fix previous solution up to week 18
+	|- Prepare subdata, took	00:00:00.003
+	|- Create variables, took	00:00:00.254
+	|- Create objective, took	00:00:00.202
+	|- Create constraints, took	00:00:01.003
+	|- Optimizing, took			00:00:05.948
+----------------------------------------------------------------------------------------------------
+Consider up to week 24 and fix previous solution up to week 20
+	|- Prepare subdata, took	00:00:00.003
+	|- Create variables, took	00:00:00.276
+	|- Create objective, took	00:00:00.218
+	|- Create constraints, took	00:00:01.091
+	|- Optimizing, took			00:00:05.139
+----------------------------------------------------------------------------------------------------
+Consider up to week 26 and fix previous solution up to week 22
+	|- Prepare subdata, took	00:00:00.004
+	|- Create variables, took	00:00:00.314
+	|- Create objective, took	00:00:00.253
+	|- Create constraints, took	00:00:01.245
+	|- Optimizing, took			00:00:04.785
+####################################################################################################
+Rolling horizon took 	00:01:06.009
+####################################################################################################
+Description                          Value
+----------------------------  ------------
+Objective (min)               18,973,246.0
+Cost sailing                  14,838,489.0
+Cost port visits               8,128,741.0
+Cost transshipment (demands)     963,292.0
+Cost transshipment (empties)     585,853.0
+Penalty delayed demands        2,203,491.0
+Revenue Empties                7,746,620.0
+Penalty rejected demands               0.0
+Rejected demands (%)                   0.0
+Omitted ports (%)                      0.0
+####################################################################################################
+Rejected 0 demand(s) (0.0 %)
+Export solution with objective 18973246.0
+####################################################################################################
+####################################################################################################
+Overall time 	00:01:06.422
+
+real	1m7.518s
+user	2m58.899s
+sys	0m3.421s
+finished at Thu Mar 16 15:01:25 CET 2023

@@ -1,0 +1,103 @@
+cpu-bind=MASK - n2cn0895, task  0  0 [609519]: mask |B-B-----|--------||--------|--------||--------|--------||--------|--------||||--------|--------||--------|--------||--------|--------||--------|------BB|  set
+started at Thu Mar 16 14:48:02 CET 2023
+Timecheck 795367.426586481
+Set parameter TokenServer to value "license3.uni-paderborn.de"
+Warning: Gurobi version mismatch between Python 10.0.1 and C library 10.0.0
+Timecheck 795367.542701193
+Timecheck 795367.543216214
+Timecheck 795367.543268864
+Timecheck 795367.543307174
+
+
+####################################################################################################
+Solve scenario sce_3_26_1 with cyclic vessel operation
+####################################################################################################
+Data preprocessing, load /upb/departments/pc2/groups/hpc-prf-winf4/dwetzel/SILSRP/inst_final/sce_3_26_1
+and create additional sets and parameters
+	|- Read vessel information, number of vessels:	5
+	|- Read node information, number of nodes:		369
+	|- Read arc information
+		|- Number of sailing arcs:			1499
+		|- Number of transshipment arcs:	497
+	|- Read container information
+		|- Number of demands:		605
+		|- Number of empties (+/-):	152/140
+	|- Create additional sets and parameters
+
+Data preprocessing took 	00:00:00.521
+####################################################################################################
+Create linear model
+	|- Create variables, took	00:00:00.524
+	|- Create objective, took	00:00:00.452
+	|- Create constraints, took	00:00:01.866
+
+Creating model took	00:00:02.844
+####################################################################################################
+####################################################################################################
+Solve optimization model
+
+Set parameter TimeLimit to value 86400
+Set parameter Threads to value 4
+Gurobi Optimizer version 10.0.0 build v10.0.0rc2 (linux64)
+
+CPU model: AMD EPYC 7763 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+Thread count: 128 physical cores, 128 logical processors, using up to 4 threads
+
+Optimize a model with 20830 rows, 71964 columns and 225648 nonzeros
+Model fingerprint: 0x01a6aaf4
+Coefficient statistics:
+  Matrix range     [1e+00, 7e+02]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 3e+02]
+  RHS range        [1e+00, 1e+07]
+Presolve removed 19638 rows and 68577 columns
+Presolve time: 0.13s
+Presolved: 1192 rows, 3604 columns, 11251 nonzeros
+
+Concurrent LP optimizer: dual simplex and barrier
+Showing barrier log only...
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ AA' NZ     : 7.762e+03
+ Factor NZ  : 3.677e+04 (roughly 2 MB of memory)
+ Factor Ops : 1.954e+06 (less than 1 second per iteration)
+ Threads    : 1
+
+Barrier performed 0 iterations in 0.15 seconds (0.07 work units)
+Barrier solve interrupted - model solved by another algorithm
+
+
+Solved with dual simplex
+Extra simplex iterations after uncrush: 18
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+     653    2.2742802e+07   0.000000e+00   0.000000e+00      0s
+
+Solved in 653 iterations and 0.23 seconds (0.11 work units)
+Optimal objective  2.274280167e+07
+
+Solving took 	00:00:00.298
+####################################################################################################
+####################################################################################################
+####################################################################################################
+Found optimal solution
+####################################################################################################
+Description                           Value
+----------------------------  -------------
+Objective (min)               22,742,801.67
+Cost sailing                    5,758,715.0
+Cost port visits               13,781,626.0
+Cost transshipment (demands)    3,816,736.0
+Cost transshipment (empties)       30,747.0
+Penalty delayed demands           777,421.0
+Revenue Empties                1,422,443.33
+####################################################################################################
+Export solution
+####################################################################################################
+Overall time 	00:00:03.912
+
+real	0m8.319s
+user	0m4.208s
+sys	0m0.481s
+finished at Thu Mar 16 14:48:11 CET 2023

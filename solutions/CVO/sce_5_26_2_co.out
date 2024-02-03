@@ -1,0 +1,110 @@
+cpu-bind=MASK - n2cn0940, task  0  0 [518246]: mask |--------|--------||--------|--------||--------|--------||--------|--------||||--------|--------||--------|-----BBB||B-------|--------||--------|--------|  set
+started at Thu Mar 16 14:48:02 CET 2023
+Timecheck 780773.417966468
+Set parameter TokenServer to value "license3.uni-paderborn.de"
+Warning: Gurobi version mismatch between Python 10.0.1 and C library 10.0.0
+Timecheck 780773.527480244
+Timecheck 780773.527709965
+Timecheck 780773.527753815
+Timecheck 780773.527786165
+
+
+####################################################################################################
+Solve scenario sce_5_26_2 with cyclic vessel operation
+####################################################################################################
+Data preprocessing, load /upb/departments/pc2/groups/hpc-prf-winf4/dwetzel/SILSRP/inst_final/sce_5_26_2
+and create additional sets and parameters
+	|- Read vessel information, number of vessels:	13
+	|- Read node information, number of nodes:		739
+	|- Read arc information
+		|- Number of sailing arcs:			6502
+		|- Number of transshipment arcs:	1076
+	|- Read container information
+		|- Number of demands:		3814
+		|- Number of empties (+/-):	373/339
+	|- Create additional sets and parameters
+
+Data preprocessing took 	00:00:05.491
+####################################################################################################
+Create linear model
+	|- Create variables, took	00:00:11.507
+	|- Create objective, took	00:00:06.225
+	|- Create constraints, took	00:00:21.038
+
+Creating model took	00:00:38.810
+####################################################################################################
+####################################################################################################
+Solve optimization model
+
+Set parameter TimeLimit to value 86400
+Set parameter Threads to value 4
+Gurobi Optimizer version 10.0.0 build v10.0.0rc2 (linux64)
+
+CPU model: AMD EPYC 7763 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+Thread count: 128 physical cores, 128 logical processors, using up to 4 threads
+
+Optimize a model with 324881 rows, 2455105 columns and 7535889 nonzeros
+Model fingerprint: 0xb48db71a
+Coefficient statistics:
+  Matrix range     [1e+00, 9e+02]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 7e+02]
+  RHS range        [1e+00, 2e+07]
+Presolve removed 300234 rows and 2379002 columns
+Presolve time: 2.30s
+Presolved: 24647 rows, 76619 columns, 242549 nonzeros
+
+Concurrent LP optimizer: dual simplex and barrier
+Showing barrier log only...
+
+Ordering time: 0.07s
+
+Barrier statistics:
+ AA' NZ     : 1.790e+05
+ Factor NZ  : 7.397e+05 (roughly 50 MB of memory)
+ Factor Ops : 7.048e+07 (less than 1 second per iteration)
+ Threads    : 3
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   1.39045617e+10 -5.68631194e+09  9.94e+05 9.96e+02  4.49e+06     2s
+   1   4.58119180e+09 -4.43348440e+09  3.23e+05 3.00e+02  1.47e+06     2s
+   2   5.86775014e+08 -3.12034335e+09  3.54e+04 8.14e+00  1.79e+05     3s
+   3   1.37629949e+08 -1.72885741e+09  3.48e+03 2.79e+00  2.74e+04     3s
+
+Barrier performed 3 iterations in 2.56 seconds (2.33 work units)
+Barrier solve interrupted - model solved by another algorithm
+
+
+Solved with dual simplex
+Extra simplex iterations after uncrush: 113
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+   11200    5.0944399e+07   0.000000e+00   0.000000e+00      4s
+
+Solved in 11200 iterations and 4.14 seconds (3.94 work units)
+Optimal objective  5.094439900e+07
+
+Solving took 	00:00:04.814
+####################################################################################################
+####################################################################################################
+####################################################################################################
+Found optimal solution
+####################################################################################################
+Description                          Value
+----------------------------  ------------
+Objective (min)               50,944,399.0
+Cost sailing                  19,732,005.0
+Cost port visits              20,348,846.0
+Cost transshipment (demands)   7,301,626.0
+Cost transshipment (empties)     742,332.0
+Penalty delayed demands        6,409,615.0
+Revenue Empties                3,590,025.0
+####################################################################################################
+Export solution
+####################################################################################################
+Overall time 	00:00:51.291
+
+real	0m55.800s
+user	0m51.887s
+sys	0m1.818s
+finished at Thu Mar 16 14:48:58 CET 2023

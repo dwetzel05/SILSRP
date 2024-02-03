@@ -1,0 +1,102 @@
+cpu-bind=MASK - n2cn0940, task  0  0 [518197]: mask |--------|--------||--------|--------||--------|--------||--------|--------||||--------|-BBBB---||--------|--------||--------|--------||--------|--------|  set
+started at Thu Mar 16 14:48:02 CET 2023
+Timecheck 780773.41848911
+Set parameter TokenServer to value "license3.uni-paderborn.de"
+Warning: Gurobi version mismatch between Python 10.0.1 and C library 10.0.0
+Timecheck 780773.527469944
+Timecheck 780773.527712534
+Timecheck 780773.527746825
+Timecheck 780773.527772135
+
+
+####################################################################################################
+Solve scenario sce_3_26_3 with cyclic vessel operation
+####################################################################################################
+Data preprocessing, load /upb/departments/pc2/groups/hpc-prf-winf4/dwetzel/SILSRP/inst_final/sce_3_26_3
+and create additional sets and parameters
+	|- Read vessel information, number of vessels:	10
+	|- Read node information, number of nodes:		373
+	|- Read arc information
+		|- Number of sailing arcs:			1531
+		|- Number of transshipment arcs:	724
+	|- Read container information
+		|- Number of demands:		740
+		|- Number of empties (+/-):	159/156
+	|- Create additional sets and parameters
+
+Data preprocessing took 	00:00:00.315
+####################################################################################################
+Create linear model
+	|- Create variables, took	00:00:00.240
+	|- Create objective, took	00:00:00.258
+	|- Create constraints, took	00:00:00.941
+
+Creating model took	00:00:01.439
+####################################################################################################
+####################################################################################################
+Solve optimization model
+
+Set parameter TimeLimit to value 86400
+Set parameter Threads to value 4
+Gurobi Optimizer version 10.0.0 build v10.0.0rc2 (linux64)
+
+CPU model: AMD EPYC 7763 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+Thread count: 128 physical cores, 128 logical processors, using up to 4 threads
+
+Optimize a model with 19775 rows, 67079 columns and 211985 nonzeros
+Model fingerprint: 0x6c3bd07b
+Coefficient statistics:
+  Matrix range     [1e+00, 7e+02]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [5e+00, 2e+03]
+  RHS range        [1e+00, 1e+07]
+Presolve removed 17230 rows and 59140 columns
+Presolve time: 0.08s
+Presolved: 2545 rows, 8168 columns, 20046 nonzeros
+
+Concurrent LP optimizer: dual simplex and barrier
+Showing barrier log only...
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ AA' NZ     : 1.206e+04
+ Factor NZ  : 5.462e+04 (roughly 5 MB of memory)
+ Factor Ops : 2.137e+06 (less than 1 second per iteration)
+ Threads    : 1
+
+Barrier performed 0 iterations in 0.16 seconds (0.08 work units)
+Barrier solve interrupted - model solved by another algorithm
+
+
+Solved with dual simplex
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+    1063    2.4244486e+07   0.000000e+00   0.000000e+00      0s
+
+Solved in 1063 iterations and 0.20 seconds (0.09 work units)
+Optimal objective  2.424448633e+07
+
+Solving took 	00:00:00.229
+####################################################################################################
+####################################################################################################
+####################################################################################################
+Found optimal solution
+####################################################################################################
+Description                           Value
+----------------------------  -------------
+Objective (min)               24,244,486.33
+Cost sailing                   13,818,547.0
+Cost port visits                7,835,791.0
+Cost transshipment (demands)   5,193,737.67
+Cost transshipment (empties)   1,074,925.67
+Penalty delayed demands         2,481,389.0
+Revenue Empties                 6,159,904.0
+####################################################################################################
+Export solution
+####################################################################################################
+Overall time 	00:00:02.105
+
+real	0m6.524s
+user	0m2.235s
+sys	0m0.676s
+finished at Thu Mar 16 14:48:09 CET 2023

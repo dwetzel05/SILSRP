@@ -1,0 +1,314 @@
+cpu-bind=MASK - n2lcn0107, task  0  0 [1654528]: mask |--------|--------||--------|--------||--------|BBBB----||--------|--------||||--------|--------||--------|--------||--------|--------||--------|--------|  set
+started at Thu Mar 16 14:56:08 CET 2023
+Timecheck 9868352.157809088
+Set parameter TokenServer to value "license3.uni-paderborn.de"
+Warning: Gurobi version mismatch between Python 10.0.1 and C library 10.0.0
+Timecheck 9868352.238048892
+Timecheck 9868352.23832984
+Timecheck 9868352.238374053
+Timecheck 9868352.238407332
+
+
+####################################################################################################
+Solve scenario sce_5_26_3 with free vessel operation using the arc flow model
+Vessels cannot omit ports, Demands cannot be rejected
+####################################################################################################
+Data preprocessing, load /upb/departments/pc2/groups/hpc-prf-winf4/dwetzel/SILSRP/inst_final/sce_5_26_3
+and create additional sets and parameters
+	|- Read vessel information, number of vessels:	12
+	|- Read node information, number of nodes:		557
+	|- Read arc information
+		|- Number of sailing arcs:			3267
+		|- Number of transshipment arcs:	1079
+	|- Read container information
+		|- Number of demands:		1704
+		|- Number of empties (+/-):	260/226
+	|- Create additional sets and parameters
+
+Data preprocessing took 	00:00:01.149
+####################################################################################################
+Create linear model
+Set parameter Threads to value 4
+	|- Create variables, took	00:00:02.012
+	|- Create objective, took	00:00:01.303
+	|- Create constraints, took	00:00:05.354
+	|- Load CVO start
+
+Creating model took	00:00:08.701
+####################################################################################################
+Fix start solution
+
+Set parameter TimeLimit to value 8.6391156592156738e+04
+Gurobi Optimizer version 10.0.0 build v10.0.0rc2 (linux64)
+
+CPU model: AMD EPYC 7763 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+Thread count: 128 physical cores, 128 logical processors, using up to 4 threads
+
+Optimize a model with 94242 rows, 477524 columns and 1591534 nonzeros
+Model fingerprint: 0x9e5a9ec9
+Variable types: 436072 continuous, 41452 integer (41452 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+05]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 3e+02]
+  RHS range        [1e+00, 8e+07]
+Presolve removed 88239 rows and 463501 columns
+Presolve time: 1.01s
+Presolved: 6003 rows, 14023 columns, 43770 nonzeros
+Variable types: 14023 continuous, 0 integer (0 binary)
+
+Root relaxation: objective 3.822810e+07, 2918 iterations, 0.03 seconds (0.02 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    3.822810e+07 3.8228e+07  0.00%     -    1s
+
+Explored 1 nodes (2918 simplex iterations) in 1.28 seconds (1.25 work units)
+Thread count was 4 (of 128 available processors)
+
+Solution count 1: 3.82281e+07 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.822809500000e+07, best bound 3.822809500000e+07, gap 0.0000%
+
+Fixing start solution took	00:00:10.163
+####################################################################################################
+####################################################################################################
+Solve optimization model
+
+Set parameter TimeLimit to value 8.6389836406333372e+04
+Gurobi Optimizer version 10.0.0 build v10.0.0rc2 (linux64)
+
+CPU model: AMD EPYC 7763 64-Core Processor, instruction set [SSE2|AVX|AVX2]
+Thread count: 128 physical cores, 128 logical processors, using up to 4 threads
+
+Optimize a model with 93686 rows, 477524 columns and 1590978 nonzeros
+Model fingerprint: 0x62a2d19a
+Variable types: 436072 continuous, 41452 integer (41452 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+05]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 3e+02]
+  RHS range        [1e+00, 8e+07]
+
+Loaded MIP start from previous solve with objective 3.82281e+07
+
+Presolve removed 11299 rows and 23753 columns (presolve time = 5s) ...
+Presolve removed 12969 rows and 33694 columns
+Presolve time: 9.19s
+Presolved: 80717 rows, 443830 columns, 1276976 nonzeros
+Variable types: 408582 continuous, 35248 integer (35248 binary)
+Deterministic concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Root barrier log...
+
+Elapsed ordering time = 5s
+Ordering time: 7.52s
+
+Barrier statistics:
+ AA' NZ     : 1.174e+06
+ Factor NZ  : 2.215e+07 (roughly 400 MB of memory)
+ Factor Ops : 2.406e+10 (less than 1 second per iteration)
+ Threads    : 2
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   3.24986680e+16 -1.13500534e+15  1.99e+10 3.90e+03  6.90e+12    19s
+   1   8.02963437e+15 -2.60042785e+14  4.91e+09 3.91e+03  1.73e+12    20s
+   2   6.97077718e+14 -5.76439268e+13  4.25e+08 3.40e+02  1.50e+11    21s
+   3   7.00543578e+13 -1.21694109e+13  4.26e+07 4.87e-10  1.52e+10    21s
+   4   1.19823244e+13 -3.21555883e+12  7.28e+06 3.13e-10  2.63e+09    22s
+   5   1.60253271e+12 -7.25711269e+11  9.72e+05 4.95e-10  3.55e+08    23s
+   6   1.59458934e+11 -2.39725416e+11  9.64e+04 3.78e-10  3.57e+07    24s
+   7   2.42215834e+10 -1.54372365e+11  1.46e+04 4.00e-10  5.53e+06    25s
+   8   2.34198311e+09 -1.10183823e+11  1.32e+03 5.82e-10  5.98e+05    26s
+   9   8.75717902e+08 -6.18233126e+10  4.36e+02 1.46e-09  2.07e+05    26s
+  10   3.04008363e+08 -3.31028539e+10  1.16e+02 4.47e-10  6.88e+04    27s
+  11   1.78325846e+08 -2.01706884e+10  5.48e+01 4.18e-10  3.59e+04    28s
+  12   1.22091821e+08 -1.22297246e+10  2.84e+01 3.97e-10  2.00e+04    28s
+  13   9.32517698e+07 -8.80488779e+09  1.56e+01 4.19e-09  1.31e+04    29s
+  14   7.88752242e+07 -5.03420581e+09  9.54e+00 1.06e-09  7.36e+03    30s
+  15   5.81841705e+07 -1.47380068e+09  2.45e+00 1.93e-09  2.00e+03    30s
+  16   5.03636872e+07 -4.20162266e+08  7.05e-01 2.59e-09  5.64e+02    31s
+  17   4.43700813e+07 -1.24282284e+08  2.39e-01 1.86e-09  1.95e+02    32s
+  18   4.01088643e+07 -3.81359238e+07  1.51e-01 1.30e-09  9.01e+01    33s
+  19   3.62610633e+07 -7.79508854e+06  7.85e-02 1.41e-09  5.04e+01    33s
+  20   3.37932599e+07  6.92338696e+05  4.47e-02 1.54e-09  3.76e+01    34s
+  21   3.22536852e+07  7.97320506e+06  2.92e-02 1.72e-09  2.75e+01    35s
+  22   3.06541068e+07  1.29896071e+07  1.89e-02 1.65e-09  2.00e+01    35s
+  23   2.91500559e+07  1.80616671e+07  1.08e-02 1.28e-08  1.25e+01    36s
+  24   2.75825633e+07  2.14138780e+07  4.21e-03 2.28e-09  6.96e+00    37s
+  25   2.68574842e+07  2.32915501e+07  2.40e-03 1.57e-09  4.02e+00    38s
+  26   2.63101539e+07  2.42412031e+07  1.26e-03 5.17e-09  2.33e+00    39s
+  27   2.59837963e+07  2.47039188e+07  6.86e-04 1.11e-08  1.44e+00    39s
+  28   2.57946393e+07  2.50427444e+07  3.74e-04 3.78e-09  8.47e-01    40s
+  29   2.57129574e+07  2.51922612e+07  2.49e-04 4.66e-09  5.87e-01    41s
+  30   2.56415204e+07  2.53218763e+07  1.44e-04 1.41e-08  3.60e-01    42s
+  31   2.55996332e+07  2.54060698e+07  8.50e-05 7.27e-09  2.18e-01    42s
+  32   2.55710718e+07  2.54717341e+07  4.75e-05 8.13e-09  1.12e-01    43s
+  33   2.55452458e+07  2.55109221e+07  1.56e-05 7.51e-09  3.87e-02    44s
+  34   2.55387622e+07  2.55209701e+07  7.18e-06 3.60e-08  2.01e-02    44s
+  35   2.55358345e+07  2.55281605e+07  3.81e-06 3.93e-08  8.66e-03    45s
+  36   2.55336980e+07  2.55311531e+07  4.87e-06 3.77e-08  2.87e-03    46s
+  37   2.55324295e+07  2.55322282e+07  1.60e-07 1.25e-08  2.27e-04    47s
+  38   2.55323679e+07  2.55323605e+07  1.37e-08 2.92e-08  8.35e-06    48s
+  39   2.55323646e+07  2.55323643e+07  5.63e-08 1.46e-08  2.76e-07    49s
+  40   2.55323643e+07  2.55323643e+07  4.25e-10 1.49e-08  2.29e-10    50s
+
+Barrier solved model in 40 iterations and 49.71 seconds (55.84 work units)
+Optimal objective 2.55323643e+07
+
+
+Root crossover log...
+
+   68939 DPushes remaining with DInf 0.0000000e+00                50s
+   15502 DPushes remaining with DInf 0.0000000e+00                50s
+       0 DPushes remaining with DInf 0.0000000e+00                51s
+
+    5639 PPushes remaining with PInf 0.0000000e+00                51s
+       0 PPushes remaining with PInf 0.0000000e+00                52s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 1.2460031e-08     52s
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+   73069    2.5532364e+07   0.000000e+00   0.000000e+00     52s
+Concurrent spin time: 14.36s (can be avoided by choosing Method=3)
+
+Solved with barrier
+   73069    2.5532364e+07   0.000000e+00   0.000000e+00     67s
+
+Root relaxation: objective 2.553236e+07, 73069 iterations, 57.16 seconds (52.05 work units)
+Total elapsed time = 70.05s
+Total elapsed time = 76.00s
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 2.5532e+07    0 4993 3.8228e+07 2.5532e+07  33.2%     -   82s
+H    0     0                    3.791827e+07 2.5532e+07  32.7%     -   83s
+     0     0 2.5916e+07    0 4691 3.7918e+07 2.5916e+07  31.7%     - 1151s
+     0     0 2.5916e+07    0 4583 3.7918e+07 2.5916e+07  31.7%     - 1263s
+     0     0 2.5965e+07    0 4596 3.7918e+07 2.5965e+07  31.5%     - 2190s
+     0     0 2.5965e+07    0 4580 3.7918e+07 2.5965e+07  31.5%     - 2389s
+     0     0 2.5969e+07    0 4566 3.7918e+07 2.5969e+07  31.5%     - 3208s
+     0     0 2.5969e+07    0 4586 3.7918e+07 2.5969e+07  31.5%     - 3292s
+     0     0 2.5969e+07    0 4594 3.7918e+07 2.5969e+07  31.5%     - 3480s
+     0     0 2.5969e+07    0 4618 3.7918e+07 2.5969e+07  31.5%     - 3547s
+     0     0 2.6233e+07    0 4730 3.7918e+07 2.6233e+07  30.8%     - 5897s
+     0     0 2.6233e+07    0 4683 3.7918e+07 2.6233e+07  30.8%     - 6010s
+     0     0 2.6333e+07    0 4796 3.7918e+07 2.6333e+07  30.6%     - 9594s
+     0     0 2.6333e+07    0 4768 3.7918e+07 2.6333e+07  30.6%     - 9860s
+     0     0 2.6355e+07    0 4857 3.7918e+07 2.6355e+07  30.5%     - 11110s
+     0     0 2.6355e+07    0 4918 3.7918e+07 2.6355e+07  30.5%     - 11394s
+     0     0 2.6357e+07    0 4877 3.7918e+07 2.6357e+07  30.5%     - 12229s
+     0     0 2.6357e+07    0 4881 3.7918e+07 2.6357e+07  30.5%     - 12395s
+     0     0 2.6358e+07    0 4871 3.7918e+07 2.6358e+07  30.5%     - 16708s
+     0     0 2.6358e+07    0 4863 3.7918e+07 2.6358e+07  30.5%     - 17139s
+     0     0 2.6358e+07    0 4903 3.7918e+07 2.6358e+07  30.5%     - 17293s
+     0     0 2.6465e+07    0 4956 3.7918e+07 2.6465e+07  30.2%     - 20327s
+     0     0 2.6465e+07    0 4922 3.7918e+07 2.6465e+07  30.2%     - 20647s
+     0     0 2.6534e+07    0 5032 3.7918e+07 2.6534e+07  30.0%     - 24303s
+     0     0 2.6534e+07    0 5013 3.7918e+07 2.6534e+07  30.0%     - 24350s
+     0     0 2.6534e+07    0 5091 3.7918e+07 2.6534e+07  30.0%     - 24446s
+     0     0 2.6534e+07    0 5017 3.7918e+07 2.6534e+07  30.0%     - 24474s
+     0     0 2.6534e+07    0 5008 3.7918e+07 2.6534e+07  30.0%     - 25137s
+     0     0 2.6534e+07    0 4990 3.7918e+07 2.6534e+07  30.0%     - 27805s
+     0     0 2.6547e+07    0 5038 3.7918e+07 2.6547e+07  30.0%     - 30177s
+     0     0 2.6547e+07    0 5111 3.7918e+07 2.6547e+07  30.0%     - 30333s
+     0     0 2.6550e+07    0 5074 3.7918e+07 2.6550e+07  30.0%     - 31892s
+     0     0 2.6552e+07    0 5203 3.7918e+07 2.6552e+07  30.0%     - 34305s
+     0     0 2.6552e+07    0 5076 3.7918e+07 2.6552e+07  30.0%     - 35533s
+     0     0 2.6552e+07    0 5263 3.7918e+07 2.6552e+07  30.0%     - 36449s
+     0     0 2.6552e+07    0 5173 3.7918e+07 2.6552e+07  30.0%     - 36635s
+     0     0 2.6552e+07    0 5137 3.7918e+07 2.6552e+07  30.0%     - 37313s
+     0     0 2.6552e+07    0 5169 3.7918e+07 2.6552e+07  30.0%     - 38097s
+     0     0 2.6621e+07    0 4945 3.7918e+07 2.6621e+07  29.8%     - 45605s
+     0     0 2.6621e+07    0 4930 3.7918e+07 2.6621e+07  29.8%     - 45606s
+     0     0 2.6621e+07    0 4924 3.7918e+07 2.6621e+07  29.8%     - 45607s
+     0     0 2.6621e+07    0 4924 3.7918e+07 2.6621e+07  29.8%     - 45608s
+     0     0 2.6623e+07    0 4976 3.7918e+07 2.6623e+07  29.8%     - 47543s
+     0     0 2.6623e+07    0 4979 3.7918e+07 2.6623e+07  29.8%     - 47544s
+     0     0 2.6623e+07    0 4969 3.7918e+07 2.6623e+07  29.8%     - 47545s
+     0     0 2.6623e+07    0 4967 3.7918e+07 2.6623e+07  29.8%     - 47547s
+     0     0 2.6623e+07    0 4958 3.7918e+07 2.6623e+07  29.8%     - 47548s
+     0     0 2.6623e+07    0 4983 3.7918e+07 2.6623e+07  29.8%     - 47549s
+     0     0 2.6623e+07    0 4984 3.7918e+07 2.6623e+07  29.8%     - 47551s
+     0     0 2.6655e+07    0 5126 3.7918e+07 2.6655e+07  29.7%     - 50642s
+     0     0 2.6655e+07    0 5146 3.7918e+07 2.6655e+07  29.7%     - 51607s
+     0     0 2.6655e+07    0 5130 3.7918e+07 2.6655e+07  29.7%     - 52571s
+     0     0 2.6655e+07    0 5110 3.7918e+07 2.6655e+07  29.7%     - 53445s
+     0     0 2.6655e+07    0 5088 3.7918e+07 2.6655e+07  29.7%     - 53693s
+     0     0 2.6655e+07    0 5085 3.7918e+07 2.6655e+07  29.7%     - 53900s
+     0     0 2.6655e+07    0 5146 3.7918e+07 2.6655e+07  29.7%     - 55091s
+     0     0 2.6655e+07    0 5126 3.7918e+07 2.6655e+07  29.7%     - 55378s
+     0     0 2.6655e+07    0 5195 3.7918e+07 2.6655e+07  29.7%     - 55542s
+     0     0 2.6655e+07    0 5145 3.7918e+07 2.6655e+07  29.7%     - 56859s
+     0     0 2.6662e+07    0 5152 3.7918e+07 2.6662e+07  29.7%     - 58468s
+     0     0 2.6675e+07    0 5145 3.7918e+07 2.6675e+07  29.7%     - 64570s
+     0     0 2.6679e+07    0 5092 3.7918e+07 2.6679e+07  29.6%     - 66951s
+     0     0 2.6679e+07    0 5140 3.7918e+07 2.6679e+07  29.6%     - 67411s
+     0     0 2.6682e+07    0 5195 3.7918e+07 2.6682e+07  29.6%     - 69163s
+     0     0 2.6682e+07    0 5218 3.7918e+07 2.6682e+07  29.6%     - 69403s
+     0     0 2.6682e+07    0 5305 3.7918e+07 2.6682e+07  29.6%     - 71264s
+     0     0 2.6682e+07    0 5247 3.7918e+07 2.6682e+07  29.6%     - 71504s
+     0     0 2.6683e+07    0 5357 3.7918e+07 2.6683e+07  29.6%     - 72826s
+     0     0 2.6683e+07    0 5264 3.7918e+07 2.6683e+07  29.6%     - 73025s
+     0     0 2.6683e+07    0 5274 3.7918e+07 2.6683e+07  29.6%     - 73849s
+     0     0 2.6683e+07    0 5349 3.7918e+07 2.6683e+07  29.6%     - 74031s
+     0     0 2.6804e+07    0 5048 3.7918e+07 2.6804e+07  29.3%     - 80142s
+     0     0 2.6804e+07    0 4945 3.7918e+07 2.6804e+07  29.3%     - 81094s
+     0     0          -    0      3.7918e+07 2.6804e+07  29.3%     - 86389s
+
+Cutting planes:
+  Gomory: 2
+  Lift-and-project: 9
+  Cover: 1
+  Implied bound: 1667
+  MIR: 3303
+  Flow cover: 128
+  Flow path: 38
+  GUB cover: 1
+  RLT: 1076
+  Relax-and-lift: 880
+
+Explored 1 nodes (6324336 simplex iterations) in 86390.13 seconds (94628.69 work units)
+Thread count was 4 (of 128 available processors)
+
+Solution count 2: 3.79183e+07 3.82281e+07 
+
+Time limit reached
+Best objective 3.791827000000e+07, best bound 2.680384408130e+07, gap 29.3115%
+
+Solving took 	23:59:50.148
+####################################################################################################
+####################################################################################################
+####################################################################################################
+Reached timelimit, but could find a feasible solution
+####################################################################################################
+Description                          Value
+----------------------------  ------------
+Objective (min)               37,918,270.0
+Cost sailing                  18,740,967.0
+Cost port visits              15,953,337.0
+Cost transshipment (demands)   3,199,726.0
+Cost transshipment (empties)     588,155.0
+Penalty delayed demands        3,253,717.0
+Revenue Empties                3,817,632.0
+Penalty rejected demands               0.0
+Rejected demands (%)                   0.0
+Omitted ports (%)                      0.0
+Gap (%)                              29.31
+####################################################################################################
+Export solution
+####################################################################################################
+Overall time 	1-00:00:02.058
+
+real	1440m4.560s
+user	1440m14.175s
+sys	0m26.131s
+finished at Fri Mar 17 14:56:12 CET 2023
